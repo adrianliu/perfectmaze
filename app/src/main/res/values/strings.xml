@@ -10,6 +10,10 @@
      <string name="finished_title">Congrats</string>
     <string name="finished_text">Level Cleared</string>
     <string name="finished_button">End Game</string>
+
+    <string name="modePrompt">Choose a Mode: </string>
+    <string name="levelPrompt">Choose a Level: </string>
+
     
     <string-array name="mode_arrays">
         <item>Demo</item>

@@ -11,7 +11,7 @@
 
         <activity
             android:name=".SplashScreen"
-            android:label="@string/title_activity_splash_screen" >
+             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,12 +20,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+             >
         </activity>
 
         <activity
             android:name=".Game"
-            android:label="@string/title_activity_main" >
+             >
         </activity>
 
 

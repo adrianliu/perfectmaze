@@ -3,6 +3,7 @@ package com.example.xiaopengliu.perfectmaze;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -17,8 +18,8 @@ import android.widget.TextView;
 
 public class GameView extends View {
 
-	int i=0;
-	TextView tv;
+//	int i=0;
+//	TextView tv;
 
 
 	//width and height of the whole maze and width of lines which
@@ -134,45 +135,43 @@ public class GameView extends View {
 	}
 
 	void showFinishDialog() {
-		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setTitle(context.getText(R.string.finished_title));
-		LayoutInflater inflater = (LayoutInflater)context.
-				getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = inflater.inflate(R.layout.finish, null);
-		builder.setView(view);
-		final AlertDialog finishDialog = builder.create();
-		View closeButton =view.findViewById(R.id.closeGame);
-		closeButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View clicked) {
-				if(clicked.getId() == R.id.closeGame) {
-					finishDialog.dismiss();
-					((Activity)context).finish();
-				}
-			}
-		});
-		finishDialog.show();
-	}
 
-	private void updateGUI() {
-		i++;
-		tv.setText(String.valueOf(i));
-		System.out.println(i);
-	}
 
-	private void startTimer() {
-		Timer updateTimer = new Timer("update");
-		updateTimer.scheduleAtFixedRate(new TimerTask() {
-			public void run() {
-				updateGUI();
-			}
-		}, 0, 1000);
-		long startTime = System.currentTimeMillis();
+		new AlertDialog.Builder(context)
+				.setTitle("Congratulations")
+				.setMessage("You have won the Game !")
+				.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						// continue with delete
+						((Activity)context).finish();
+					}
+				})
+				.show();
 
+
+
+
+//		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//		builder.setTitle(context.getText(R.string.finished_title));
+//		LayoutInflater inflater = (LayoutInflater)context.
+//				getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//		View view = inflater.inflate(R.layout.finish, null);
+//		builder.setView(view);
+//		final AlertDialog finishDialog = builder.create();
+//		View closeButton =view.findViewById(R.id.closeGame);
+//		closeButton.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View clicked) {
+//				if(clicked.getId() == R.id.closeGame) {
+//					finishDialog.dismiss();
+//					((Activity)context).finish();
+//				}
+//			}
+//		});
+//		finishDialog.show();
 	}
 
 	public boolean onTouchEvent(MotionEvent event) {
-		startTimer();
 
 		float touchX = event.getX();
 		float touchY = event.getY();

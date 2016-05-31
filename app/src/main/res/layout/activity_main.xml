@@ -1,25 +1,88 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background = "@drawable/homescreen"
     android:orientation="vertical" >
 
-    <Spinner
-        android:id="@+id/spinner_mode"
+
+    <Space
         android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/mode_arrays" />
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text="@string/modePrompt"
+            android:textColor="@color/yellow"
+            android:layout_gravity="center_vertical"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_mode"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/mode_arrays" />
+
+
+    </LinearLayout>
+    
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text="@string/levelPrompt"
+            android:textColor="@color/yellow"
+
+            android:layout_gravity="center_vertical"
+            />
+
 
     <Spinner
         android:id="@+id/spinner_level"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:entries="@array/level_arrays"
         />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/red"
         android:text="Play Game" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/red"
+        android:text="Exit Game" />
 
 </LinearLayout>
