@@ -128,7 +128,7 @@ public class GameView extends View {
 				(cellWidth*0.45f),                           //radius
 				ball);
 		//draw the finishing point indicator
-		canvas.drawText("F",
+		canvas.drawText("A",
 				(mazeFinishX * totalCellWidth)+(cellWidth*0.25f),
 				(mazeFinishY * totalCellHeight)+(cellHeight*0.75f),
 				ball);
